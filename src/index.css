@@ -2675,9 +2675,9 @@ height: 100px;
 }
 
 /* Asignación de imágenes */
-.item:nth-child(2) { background-image: url('exito1.jpg'); }
-.item:nth-child(3) { background-image: url('exito2.jpg'); }
-.item:nth-child(4) { background-image: url('exito3.jpg'); }
+.item:nth-child(2) { background-image: url('/exito1.jpg'); }
+.item:nth-child(3) { background-image: url('/exito2.jpg'); }
+.item:nth-child(4) { background-image: url('/exito3.jpg'); }
 
 /* Overlay */
 .overlay {
