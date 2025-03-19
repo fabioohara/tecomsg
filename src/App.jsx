@@ -1,40 +1,62 @@
+import React, { useState, useEffect,useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./componentes/Header";
 import Banner from "./componentes/Banner";
 import Ayuda from "./componentes/Ayuda";
 import Card1 from "./componentes/Card1";
-import Card2 from "./componentes/Card2";
-import Card3 from "./componentes/Card3";
 import BannerMini from "./componentes/BannerMini";
-import Resolucion from "./componentes/Resolucion";
 import Agenda from "./componentes/Agenda";
-import Map from "./componentes/Map";
-import Dudas from "./componentes/Dudas";
 import Footer from "./componentes/Footer";
 import SubFooter from "./componentes/SubFooter";
-import "font-awesome/css/font-awesome.min.css";
 import whatsapp from "./assets/whatsapp.png";
-import BannerEstudio from "./componentes/BannerEstudio"; // <-- Nuevo componente
-import EstudioAyuda from "./componentes/EstudioAyuda";
-import Mision from "./componentes/Mision";
-import Expertos from "./componentes/Expertos";
-import BannerExpertos from "./componentes/BannerExpertos";
-import Valores from "./componentes/Valores";
-import BannerMini2 from "./componentes/BannerMini2";
-import Especialistas from "./componentes/Especialistas";
-import Card4 from "./componentes/Card4";
-import BannerAbogados from "./componentes/BannerAbogados";
-import AbogadosAyuda from "./componentes/AbogadosAyuda";
-import Abogados from "./componentes/Abogados";
-import Area from "./componentes/Area";
+import BannerNosotros from "./componentes/BannerNosotros";
+import Empresa2 from "./componentes/Empresa2";
+import NuestraEmpresa from "./componentes/NuestraEmpresa";
+import BannerTelecom from "./componentes/BannerTelecom";
+import Telecom from "./componentes/Telecom";
+import Telecom2 from "./componentes/Telecom2";
+import Agenda2 from "./componentes/Agenda2";
+import Catastro from "./componentes/Catastro";
+import BannerCatastro from "./componentes/BannerCatastro";
+import BannerSoftware from "./componentes/BannerSoftware";
+import Software from "./componentes/Software";
+import BannerFiberfield from "./componentes/BannerFiberfield";
+import Fiberfield from "./componentes/Fiberfield";
+import BannerTcatastro from "./componentes/BannerTcatastro";
+import Tcatastro from "./componentes/Tcatastro";
+import BannerTpredial from "./componentes/BannerTpredial";
+import Tpredial from "./componentes/Tpredial";
 
 function App() {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      console.log("ScrollY:", scrollY); // ✅ Verifica si el evento se dispara
+
+      setShow(scrollY > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // ✅ Se ejecuta una sola vez al montar el componente
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+
   return (
     <>
       <Header />
-
       <Routes>
-        {/* Ruta principal con los componentes originales */}
         <Route
           path="/"
           element={
@@ -43,49 +65,106 @@ function App() {
               <Ayuda />
               <Card1 />
               <BannerMini />
-            
               <Agenda />
-          
             </>
           }
         />
+
+<Route
+          path="/nosotros"
+          element={
+            <>
+              <BannerNosotros />
+              <NuestraEmpresa/>
+              <Empresa2 />
+             <BannerMini />
+            </>
+          }
+        />
+
+<Route
+          path="/telecomunicaciones"
+          element={
+            <>
+              <BannerTelecom />
+              <Telecom/>
+              <Telecom2 />
+              <Agenda2 />
+            </>
+          }
+        />
+
+<Route
+          path="/catastro"
+          element={
+            <>
+              <BannerCatastro />
+              <Catastro/>
+              <Agenda2 />
+            </>
+          }
+        />
+
         
-        {/* Nueva ruta que muestra un nuevo componente */}
-        <Route path="/estudio" element={
+
+<Route
+          path="/software"
+          element={
             <>
-              <BannerEstudio />
-             <EstudioAyuda/>
-             <Mision/>
-             <Expertos/>
-            <BannerExpertos/>
-            <Valores/>
-            <BannerMini2/>
-            <Especialistas/>
-            <Card4/>
+              <BannerSoftware />
+              <Software/>
+              <Agenda2 />
             </>
-          } />
+          }
+        />
 
-            {/* Nueva ruta que muestra un nuevo componente */}
-        <Route path="/abogados" element={
+<Route
+          path="/fiberfield"
+          element={
             <>
-              <BannerAbogados />
-              <AbogadosAyuda/>
-              <Abogados/>
+              <BannerFiberfield />
+              <Fiberfield />
+              <Agenda2 />
+
             </>
-          } />
+          }
+        />
 
-<Route path="/areas/:id" element={<Area />} />
+<Route
+          path="/tcatastro"
+          element={
+            <>
+              <BannerTcatastro />
+              <Tcatastro />
+              <Agenda2 />
 
+            </>
+          }
+        />
+
+<Route
+          path="/tpredial"
+          element={
+            <>
+              <BannerTpredial />
+              <Tpredial />
+              <Agenda2 />
+
+            </>
+          }
+        />
 
       </Routes>
-
-      <Footer />
+    
+    
+      <Footer/>
       <SubFooter />
 
       {/* Ícono de WhatsApp */}
       <a
         href={`https://wa.me/990081302`}
         target="_blank"
+        rel="noopener noreferrer"
         className="whatsapp-icon"
         style={{
           position: "fixed",
@@ -96,8 +175,30 @@ function App() {
       >
         <img src={whatsapp} alt="WhatsApp" />
       </a>
+
+      {/* Botón de volver arriba */}
+      {show && (
+        <button
+          onClick={handleScrollToTop}
+          style={{
+            position: "fixed",
+            bottom: "20px",
+            left: "20px",
+            zIndex: "3000",
+            padding: "10px",
+            backgroundColor: "rgba(100,100,100,0.6)",
+            borderRadius:"10%",
+            color: "white",
+            border: "none",
+            cursor: "pointer",
+            fontSize: "18px",
+            fontWeight:"bolder",
+            boxShadow: "0px 4px 6px rgba(0,0,0,0.1)",
+          }}
+        >↑</button>
+      )}
     </>
   );
 }
-
+  
 export default App;

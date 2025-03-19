@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom"; // Importar Link y useLocation
 import logo from "../assets/logo.svg";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false); // Estado del menú hamburguesa
   const [openDropdown, setOpenDropdown] = useState(null); // Controla qué dropdown está abierto
   const dropdownRef = useRef(null);
+  const location = useLocation(); // Obtener la ruta actual
 
   // Función para detectar si es móvil
   const isMobile = window.innerWidth <= 992;
@@ -48,23 +50,23 @@ const Header = () => {
       {/* Navbar con estado abierto/cerrado */}
       <nav className={`navbar ${isOpen ? "open" : ""}`}>
         <ul className="menu">
-          <li className="liSelected"><a href="/">INICIO</a></li>
-          <li><a href="#">NOSOTROS</a></li>
+          <li className={location.pathname === "/" ? "liSelected" : ""}><a href="/">INICIO</a></li>
+          <li className={location.pathname === "/nosotros"  ? "liSelected" : ""}><a href="/nosotros">NOSOTROS</a></li>
 
           {/* Dropdown SERVICIOS */}
           <li
-            className={`dropdown ${openDropdown === "servicios" ? "open" : ""}`}
+            className={`dropdown ${openDropdown === "servicios"  ? "open" : ""}`}
             ref={dropdownRef}
             onMouseEnter={() => !isMobile && setOpenDropdown("servicios")}
             onClick={() => handleDropdownToggle("servicios")}
           >
-            <a href="#" className="dropdown-toggle">
-              SERVICIOS
-            </a>
+          <a href="#" className={["/telecomunicaciones", "/catastro","/software"].includes(location.pathname) ? "liSelected dropdown-toggle" : "dropdown-toggle"}>
+  SERVICIOS
+</a>
             <ul className="dropdown-menu">
-              <li><a href="#">Telecomunicaciones</a></li>
-              <li><a href="#">Catastro e Impuesto Predial</a></li>
-              <li><a href="#">Software</a></li>
+              <li><a href="/telecomunicaciones">Telecomunicaciones</a></li>
+              <li><a href="/catastro">Catastro e Impuesto Predial</a></li>
+              <li><a href="/software">Software</a></li>
             </ul>
           </li>
 
@@ -75,13 +77,13 @@ const Header = () => {
             onMouseEnter={() => !isMobile && setOpenDropdown("software")}
             onClick={() => handleDropdownToggle("software")}
           >
-            <a href="#" className="dropdown-toggle">
-              SOFTWARE
-            </a>
+            <a href="#" className={["/fiberfield", "/tcatastro","/tpredial"].includes(location.pathname) ? "liSelected dropdown-toggle" : "dropdown-toggle"}>
+  SOFTWARE
+</a>
             <ul className="dropdown-menu">
-              <li><a href="#">FiberField</a></li>
-              <li><a href="#">T* Catastro</a></li>
-              <li><a href="#">T* Predial</a></li>
+              <li><a href="/fiberfield">FiberField</a></li>
+              <li><a href="/tcatastro">T* Catastro</a></li>
+              <li><a href="/tpredial">T* Predial</a></li>
             </ul>
           </li>
         </ul>

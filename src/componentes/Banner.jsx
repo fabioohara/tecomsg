@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import inicio from "../assets/inicio.jpg";
 
 
@@ -16,7 +15,7 @@ const Banner = () => {
                 </div>
                 <div className="banner-imgs">
                 <img
-                  className="banner-img"
+                  className="banner-img-0"
                   src={inicio}
                   
                 />

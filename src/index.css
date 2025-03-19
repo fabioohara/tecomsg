@@ -21,12 +21,14 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw; /* Asegura que ocupe el ancho total */
-  height: 100vh; /* Asegura que ocupe el alto total */
+  height: auto;  /* Asegura que ocupe el alto total */
   display: flex;
   flex-direction: column;
   background-color: var(--background-color);
   overflow-x: hidden;
 }
+
+
 
 a{
   color:unset !important;
@@ -338,8 +340,7 @@ h1 {
 color:white !important;
 background-color: #17b8db;
 height: 100%;
-padding: 0 1rem;
-margin:0;
+
 }
 
 
@@ -382,15 +383,77 @@ margin:0;
 }
 
 .banner {
-  top:85px;
   position: relative;
-  width: 100%;
-  overflow: hidden; /* Evita desbordamientos */
-  background-color: #b2b2b2;
-  height:70%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; /* 📌 Centra el contenido verticalmente */
+  top: 110px;
+  background-color: #252525;
+  height: 70vh; /* 🔥 Asegura que ocupe toda la pantalla */
+  overflow: hidden; /* 🔥 Evita espacios extra */
+}
+
+.shadow {
+  position: relative; /* 📌 Lo posicionamos dentro de .banner */
+ top:20%;
+  left: 6rem; /* 📌 Mantiene el desplazamiento lateral */
+  transform: translateY(-50%); /* 📌 Corrige el centrado exacto */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: transparent;
+  color: #ffffff;
+  z-index: 999;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 30%;
 }
 
 
+
+.shadow h1{
+  width: 100%;
+  font-size: 2rem;
+  
+}
+
+
+.shadow p {
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.shadow span {
+ color:#17b8db;
+}
+
+.banner-imgs {
+  position: absolute;
+  width: 100%;
+  height: 100%; /* 🔥 Asegura que la imagen ocupe toda la altura */
+  display: flex;
+  align-items: center;
+}
+
+.banner-img {
+  position: absolute;
+  width: 100%;
+  height: 100%; /* 🔥 Ocupar todo el espacio disponible */
+  object-fit: cover; /* 🔥 Asegura que la imagen se ajuste correctamente */
+  object-position:center;
+  z-index: 997;
+  filter:brightness(0.5)
+}
+
+.banner-img-0 {
+  position: absolute;
+  width: 100%;
+  height: 100%; /* 🔥 Ocupar todo el espacio disponible */
+  object-fit: cover; /* 🔥 Asegura que la imagen se ajuste correctamente */
+  object-position:center;
+  z-index: 997;
+ 
+}
 
 
 
@@ -414,57 +477,7 @@ margin:0;
   position: relative;
 }
 
-/* Fondo oscuro detrás del texto */
-.shadow {
-  position: absolute;
-  top:25%;
-  left: 6rem;
-  width: 32rem;
-  background-color: transparent; /* 🔹 Fondo semi-transparente para resaltar el texto */
-  color: #ffffff;
-  z-index: 999;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: left;
-  border-radius: 10px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
-}
-
-
-
-.shadow h1{
-  width: 100%;
-  font-size: 2rem;
-  
- /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);*/
-}
-
-
-.shadow p {
-  width: 100%;
- /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);*/
-  font-size: 1.2rem;
-}
-
-.shadow span {
- color:#17b8db;
-}
-.banner-imgs{
-  display: flex;
-  flex-direction: column;
-   width: 100% !important;
- }
-
-.banner-img {
- 
-  object-fit: cover;
-
-   z-index: 997;
- 
-}
 
 .banner-img2 {
 
@@ -603,6 +616,7 @@ margin:0;
   height: 300px !important;
   margin: 0 auto;
   margin-top: 6rem;
+  margin-bottom: 6rem;
   overflow: visible; /* Permite que el contenido sobresalga */
   display: flex;
   justify-content: center;
@@ -727,11 +741,11 @@ margin:0;
   position: relative;
   text-align: center;
   padding: 2rem 0 2rem 0 ;
-  background-color: #ffffff; /* Fondo blanco */
+  
   width: 90%;
   margin: 0 auto; /* Centra el contenedor */
   z-index: 999;
-  margin-top: 100px;
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
   justify-content:center;
@@ -822,7 +836,7 @@ margin:0;
    margin:0 1rem;
 }
 .area-item-describe {
-  margin:1rem;
+  margin:1rem auto;
    color: #777;
    text-align: center;
   display: -webkit-box;
@@ -1077,8 +1091,7 @@ margin:0;
   }
 
   .div-rounded-banner {
-    font-size: 1rem;
-    padding: 0.6rem 1.5rem;
+    display: none;
   }
 
   .div-rounded {
@@ -1090,17 +1103,17 @@ margin:0;
     position: relative;
     text-align: center;
     padding: 0 0 1rem 0 ;
-    background-color: #ffffff; /* Fondo blanco */
+   
     width: 70%;
     margin: 0 auto; /* Centra el contenedor */
     z-index: 501;
-    margin-top: 3rem;
+   
     display: flex;
     flex-direction: column;
     justify-content:center;
     align-items: center;
     box-shadow: 0px 2px 10px 1px rgba(161,155,161,1);
-   
+   margin-top:30% !important;
   }
   .container {
     display: none;
@@ -2722,39 +2735,80 @@ height: 100px;
 
 
 @media (max-width: 768px) {
-  .banner-imgs{
-      flex-direction: row;
-     width: 100% !important;
-     height: 60% !important;
-     justify-content: flex-end;
-   }
 
-   .banner-img{
-      width: 100%;
-      object-position: 60%;
-   }
+  .banner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; /* 📌 Centra el contenido verticalmente */
+    top: 110px;
+   
+    height: 60vh; /* 🔥 Asegura que ocupe toda la pantalla */
+    overflow: hidden; /* 🔥 Evita espacios extra */
+  }
 
-.banner {
- background-color:#262626 ;
-  height:70%;
+  
+.banner-imgs {
+  position: absolute;
+  width: 100%;
+  height: 66%; /* 🔥 Asegura que la imagen ocupe toda la altura */
+  display: flex;
+  align-items: center;
 }
 
-.shadow {
- width:90%;
-  top:63%;
-  left:1rem;
-  margin:auto;
+.banner-img {
+  position: absolute;
+  width: 100%;
+  height: 100%; /* 🔥 Ocupar todo el espacio disponible */
+  object-fit: cover; /* 🔥 Asegura que la imagen se ajuste correctamente */
+  z-index: 997;
+  filter:brightness(1)
+}
+
+.banner-img-0 {
+  position: absolute;
+  width: 100%;
+  height: 100%; /* 🔥 Ocupar todo el espacio disponible */
+  object-fit: cover; /* 🔥 Asegura que la imagen se ajuste correctamente */
+  z-index: 997;
+  object-position:55%;
+ 
 }
 
 
 
 .areas-ayuda-container {
  
-
-  margin-top: 150px;
+position: relative;
+ 
  box-shadow: unset !important;
 
+ 
 }
+.shadow {
+  left: 0rem; 
+ width:90%;
+ top:84% ;
+ 
+  
+}
+
+.shadow h1 {
+ font-size: 1.2rem;
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ margin-bottom:0.5rem;
+ 
+ }
+
+ .shadow p {
+  font-size:1rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin:0;
+  width: 100%;
+  
+  }
+ 
 
 .areas-ayuda-container h2 {
  font-size: 2.4rem;
@@ -2836,3 +2890,890 @@ height: 100px;
 }
 
 }
+
+.menuFooter li{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.sub-footer p{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+
+.areas-empresa-title {
+  position: relative;
+  height: 10rem;
+  text-align: center;
+  font-family:monospace;
+  font-size: large;
+  top:8rem;
+  width: 100%;
+  margin: 0 0; /* Centra el contenedor */
+
+ 
+ 
+}
+
+.areas-empresa-container {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  padding: 2rem 0 2rem 0 ;
+  background-color: #252525; /* Fondo blanco */
+  width: 100%;
+  margin: 0 auto; /* Centra el contenedor */
+  z-index: 999;
+  margin-top: 100px;
+ 
+ 
+ 
+}
+
+.areas-empresa-time{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  gap:3rem;
+}
+/* Grilla adaptable */
+.areas-empresa-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem; /* Esp aciado entre los elementos */
+  justify-content: space-between; /* Centra los elementos en la grilla */
+  align-items: center;
+  color:white;
+  margin: 3rem auto;
+  width: 80%;
+}
+
+.area-empresa-describe {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin:1rem auto;
+   color: #fff;
+   text-align: justify;
+  display: -webkit-box;
+ font-size: large;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 60%;
+  line-height: 1.5em; /* Asegura que las 3 líneas sean uniformes */
+  
+
+}
+
+.img-empresa{
+  width: 500px;
+  border-radius: 10px;
+}
+
+.img-lt{
+height: 370px;
+margin: auto;
+}
+
+
+
+
+.item2 {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+  height: auto;
+  min-height: 300px;
+}
+
+.contenedor-nuestra-empresa {
+   display: flex;
+  margin: auto;
+  background-color: #252525;
+  margin-top: 3rem;
+  flex-direction: column;
+
+}
+
+.contenedor-empresa {
+  display: grid;
+
+ grid-template-columns: 6fr 1fr  6fr;
+ grid-template-rows:  auto auto auto;
+ gap:1rem;
+ padding: 1rem;
+ margin: auto;
+ background-color: #252525;
+ margin-top: 3rem;
+
+}
+
+.overlay2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+   width: 80%;
+   text-align: left;
+   margin:auto;
+  color: white;
+  font-size: 1.5rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.overlay3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+   width: 80%;
+   text-align: left;
+   margin:auto;
+  color: white;
+  font-size: 1.5rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.empresa-item {
+   color: #fff;
+  text-align: center;
+   font-size: 1.6rem;
+  font-weight: normal;
+   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   margin:0 1rem;
+}
+
+.empresa-describe {
+  
+  margin:1rem auto;
+   color: #fff;
+   text-align: center;
+  display: -webkit-box;
+  width:100%; /* Ajusta según tu diseño */
+  font-weight: 300;
+
+}
+
+.valores {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:300px;
+  width: 400px;
+ padding: 1rem;
+ border: 1px solid #17b8db !important; /* Grosor, estilo y color */
+ border-radius: 5px;
+
+}
+
+.empresa-img{
+  padding:1.5rem;
+  height: 60px;
+
+}
+
+.contenedor-ventajas {
+  display: grid;
+align-items:center;
+ grid-template-columns:1fr 1fr ;
+ grid-template-rows:  auto auto;
+ gap:5rem;
+ padding: 1rem;
+ margin: auto;
+ margin-top: 3rem;
+
+}
+
+.item2 p{
+  color:white;
+  font-weight: 300;
+}
+
+.ventajas{
+  display: flex;
+  flex-direction: row;
+  gap:2rem;
+  margin:3rem;
+}
+
+.img-ventaja{
+  width:60px;
+}
+
+.titulo-ventajas{
+  color:white;
+  margin:0 auto;
+  font-family: monospace;
+ 
+}
+
+@media (max-width: 768px) {
+
+  .areas-empresa-title {
+    position: relative;
+    margin-top:15% !important;
+    
+  }
+  .contenedor-nuestra-empresa {
+    margin-top:8rem !important;
+    
+ }
+ 
+ .img-lt{
+  display: none;
+ }
+
+ .contenedor-empresa {
+   display: grid;
+ 
+  grid-template-columns: 1fr ;
+  grid-template-rows:  auto;
+  background-color: #252525;
+  margin-top: 3rem;
+ 
+ }
+
+ .overlay2 {
+
+   width: 80%;
+  
+
+}
+
+.overlay3 {
+flex-direction: column-reverse;
+  width: 80%;
+ 
+
+}
+
+.img-empresa{
+  width: 100%;
+}
+
+.areas-empresa-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin: 3rem auto;
+  width: 80%;
+}
+
+.valores{
+  width: 100%;
+}
+
+.contenedor-ventajas {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  padding: 1rem;
+  margin: auto;
+  width: 80%;
+}
+
+.titulo-ventajas{
+ width: 80%;
+text-align: center;
+ 
+}
+}
+
+
+.telecom-grid {
+  margin:5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Por defecto: 3 columnas */
+  
+  justify-content: center; /* Centra los elementos en la grilla */
+  width: 100%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ 
+}
+
+.img-servicios{
+  width: 60px;
+  height: 60px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.servicios{
+  display: flex;
+  align-items: center;
+  width: 200%;
+}
+
+.servicios2{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 1rem;
+}
+
+.servicios2 h3{
+  text-align: left;
+  margin:0;
+  color:#252525;
+
+ 
+}
+
+.servicios2 p{
+  text-align: left;
+  color:#666666;
+  font-weight: lighter;
+
+}
+
+
+.contenedor-servicios {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ width: 100%;
+ background-color: #252525;
+ margin-top: 3rem;
+ padding: 5rem 2rem;
+
+}
+
+.titulo-azul{
+  font-size:xx-large ;
+  color:#17b8db;
+  margin-top: 1rem;
+}
+
+.overlay4 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ margin: auto;
+   width:80%;
+
+  
+
+}
+
+.overlay44 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ margin: auto;
+   width:80%;
+
+  
+
+}
+
+.overlay5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+   width: 100%;
+  margin-left: 4rem;
+  color: white;
+  font-size: 1.2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.overlay6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+   width: 100%;
+   margin-right:4rem;
+  color: white;
+  font-size: 1.2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+
+
+.demos {
+  display: flex;
+flex-direction: column;
+ gap:1rem;
+ padding: 1rem;
+ margin: auto;
+ margin-top: 3rem;
+ margin-bottom: 3rem;
+align-items: center;
+font-family: monospace;
+}
+
+.demo1{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  align-items:center;
+  justify-content:center;
+  gap: 10rem;
+  
+}
+
+.demo2{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-blue {
+  padding: 0.4rem 2rem; /* Reduce el tamaño del padding */
+  background-color: #17b8db;
+  color: white !important;
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: transparent solid 2px;
+  border-radius: 50px !important;
+  transition: background-color 300ms, border 300ms;
+  margin-left: auto; /* Empuja hacia la derecha */
+   white-space: nowrap; /* Evita que el texto se divida en dos líneas */
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+
+}
+
+.button-blue:hover {
+  background-color: transparent;
+  border: #17b8db solid 2px;
+  color:#17b8db !important;
+
+}
+
+@media (max-width: 768px) {
+.telecom-grid {
+ 
+  
+  grid-template-columns: repeat(1, 1fr); /* Por defecto: 3 columnas */
+  gap:3rem;
+
+ 
+}
+
+
+
+.contenedor-servicios {
+  width: 90%;
+ }
+
+
+.overlay4 {
+ 
+   flex-direction: column;
+ 
+  margin: auto;
+   width:100%;
+}
+
+.overlay44 {
+ 
+   flex-direction: column-reverse;
+ margin:  3rem 0 !important;
+ 
+   width:100% !important;
+}
+
+.overlay5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+   width: 90%;
+  margin-left:0;
+  color: white;
+  font-size: 1.2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.overlay6 {
+ 
+   width:90%;
+   margin-right:0;
+ 
+
+}
+
+
+
+.demos {
+  display: flex;
+flex-direction: column;
+ gap:1rem;
+ padding: 1rem;
+ text-align: center;
+
+}
+
+.demo1{
+  
+  flex-direction: column;
+   gap: 2rem;
+   width: 100% !important;
+ 
+}
+
+.demo2{
+ margin:unset;
+
+  
+}
+.demo2 img{
+  width: 80%;
+   
+ }
+
+ .ventajas{
+ padding: auto;
+  gap:2rem;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  margin:auto;
+  height: 100px;
+  
+}
+
+
+}
+
+.item2 {
+  
+  min-height:100px;
+}
+
+.item2 h3{
+  margin:0;
+}
+
+
+.overlay55 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    margin:1rem;
+   width: 100%;
+ 
+  color: white;
+  font-size: 1.2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.contenedor-software {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color:transparent;
+  margin-top: 8rem;
+  margin-bottom: 6rem;
+ 
+ }
+
+ .overlay-software-01 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ margin: auto;
+   width:100%;
+   text-align: center;
+ 
+}
+
+.overlay-software-02 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+   width:100%;
+   background-color: #f6f6f6;
+   text-align: center;
+}
+
+.overlay-software-1{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  padding: 5rem;
+ 
+}
+
+.overlay-software-2{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  padding: 5rem;
+ 
+}
+
+.interno-1{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin:auto;
+  width: 80%;
+  padding: 2rem;
+}
+
+.interno-2{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin:auto;
+  width: 80%;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+
+  .contenedor-software {
+   
+   
+    margin-top: 30%;
+   
+   
+   }
+
+
+
+.overlay-software-1{
+ 
+  padding: 0rem;
+ 
+}
+
+.overlay-software-2{
+ 
+  padding: 0rem;
+ 
+}
+
+.interno-1{
+
+  flex-direction: column;
+
+}
+
+.interno-2{
+  flex-direction: column-reverse;
+ 
+}
+
+}
+
+.software-grid {
+  margin:2rem;
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Por defecto: 3 columnas */
+   gap: 1rem; /* Espaciado entre los elementos */
+  justify-content: center; /* Centra los elementos en la grilla */
+  width: 100%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.img-software{
+  height: 50px;
+}
+
+.beneficios{
+  display: flex;
+  flex-direction: row;
+ 
+  margin: 1rem auto;
+ 
+
+  
+}
+
+
+.beneficios-h3{
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+  text-align: left;
+  margin:0;
+}
+.beneficios-p{
+ 
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: left;
+  margin:0;
+  color: white;
+}
+.beneficios-div{
+  display: flex; 
+  gap:1rem;
+  margin-left:20%;
+  padding: 1rem;
+}
+
+.item3 {
+ 
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ gap:0rem;
+ background-color: #252525;
+  padding: 3rem ;
+ 
+ width: 100%;
+
+ 
+
+}
+
+.item3 h1{
+  font-family: monospace;
+  font-size: 3.5rem;
+  color: white;
+  
+ 
+}
+
+.software-container{
+ 
+  position: relative;
+  text-align: center;
+  
+  background-color: #ffffff; /* Fondo blanco */
+  width: 100%;
+  margin: 0; /* Centra el contenedor */
+  z-index: 999;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+
+}
+
+.software-container h1{
+  font-family: monospace;
+  font-size: 3.5rem;
+
+  padding: 2rem;
+}
+
+.container2 {
+  position: relative;
+  background: #17b8db;
+ 
+    width: 100%;
+  margin: 0 auto; /* Centra el contenedor */
+ 
+ 
+  box-sizing: border-box; 
+  display: flex; /* Activa Flexbox */
+  align-items: center; /* Alinea verticalmente */
+  justify-content:center; /* Alinea los elementos al inicio */
+ 
+}
+
+.img-beneficios{
+  width:50px;
+}
+
+.software-grid-4 {
+  margin:2rem;
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Por defecto: 3 columnas */
+   gap: 1rem; /* Espaciado entre los elementos */
+  justify-content: center; /* Centra los elementos en la grilla */
+  width: 100%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+@media (max-width: 768px) {
+.software-container{
+  position: relative;
+  margin-top:30%;
+  width: 100%;
+  z-index: 0;
+}
+
+.software-container h1{
+  font-size: xxx-large;
+  margin:unset;
+  width:100%;
+}
+
+.software-grid, .software-grid-4{
+ 
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Por defecto: 3 columnas */
+   gap: 1rem; /* Espaciado entre los elementos */
+  justify-content: center; /* Centra los elementos en la grilla */
+  width: 100%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+.item3 {
+ margin: 0rem;
+ gap:0rem;
+  width: 100%;
+}
+
+.beneficios{
+  width:80%;
+  margin:unset 2rem;
+  padding: unset;
+  gap:0rem;
+ 
+}
+
+
+.beneficios-div{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 0rem 1rem;
+}
+
+.beneficios-div2{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-items: flex-start;
+  width: 100%;
+}
+
+.item3 h1{
+  font-family: monospace;
+  font-size: 2.5rem;
+  color: white;
+  padding: 0%;
+  margin-bottom:1rem;
+ 
+}
+
+}
+
