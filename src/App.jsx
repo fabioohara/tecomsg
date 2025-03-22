@@ -1,5 +1,6 @@
 import React, { useState, useEffect,useRef } from "react";
 import { Routes, Route } from "react-router-dom";
+
 import Header from "./componentes/Header";
 import Banner from "./componentes/Banner";
 import Ayuda from "./componentes/Ayuda";
@@ -26,6 +27,8 @@ import BannerTcatastro from "./componentes/BannerTcatastro";
 import Tcatastro from "./componentes/Tcatastro";
 import BannerTpredial from "./componentes/BannerTpredial";
 import Tpredial from "./componentes/Tpredial";
+import BannerContacto from "./componentes/BannerContacto";
+
 
 function App() {
   const [show, setShow] = useState(false);
@@ -33,7 +36,7 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
-      console.log("ScrollY:", scrollY); // ✅ Verifica si el evento se dispara
+    
 
       setShow(scrollY > 100);
     };
@@ -65,6 +68,7 @@ function App() {
               <Ayuda />
               <Card1 />
               <BannerMini />
+             
               <Agenda />
             </>
           }
@@ -89,7 +93,7 @@ function App() {
               <BannerTelecom />
               <Telecom/>
               <Telecom2 />
-              <Agenda2 />
+              <Agenda />
             </>
           }
         />
@@ -100,7 +104,7 @@ function App() {
             <>
               <BannerCatastro />
               <Catastro/>
-              <Agenda2 />
+              <Agenda />
             </>
           }
         />
@@ -113,7 +117,7 @@ function App() {
             <>
               <BannerSoftware />
               <Software/>
-              <Agenda2 />
+              <Agenda />
             </>
           }
         />
@@ -124,7 +128,7 @@ function App() {
             <>
               <BannerFiberfield />
               <Fiberfield />
-              <Agenda2 />
+              <Agenda />
 
             </>
           }
@@ -136,7 +140,7 @@ function App() {
             <>
               <BannerTcatastro />
               <Tcatastro />
-              <Agenda2 />
+              <Agenda />
 
             </>
           }
@@ -148,7 +152,18 @@ function App() {
             <>
               <BannerTpredial />
               <Tpredial />
-              <Agenda2 />
+              <Agenda />
+
+            </>
+          }
+        />
+
+<Route
+          path="/contacto"
+          element={
+            <>
+              <BannerContacto />
+             
 
             </>
           }
@@ -162,7 +177,7 @@ function App() {
 
       {/* Ícono de WhatsApp */}
       <a
-        href={`https://wa.me/990081302`}
+        href={`https://wa.me/990081302?text=Hola,%20quiero%20enviar%20una%20consulta%20desde%20su%20Sitio%20Web`}
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-icon"

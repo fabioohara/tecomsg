@@ -15,15 +15,15 @@ const BannerTpredial = () => {
                   
                 
                 </div>
-                <div className="banner-imgs">
+              
                 <img
-                  className="banner-img"
+                  className="banner-img filtrado"
                   src={tpredial}
                   
                 />
 
 
-                </div>
+             
             
 
 

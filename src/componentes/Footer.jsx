@@ -1,15 +1,28 @@
+
 import React from 'react'
 import logo2 from '../assets/logo2.svg'
+
 const Footer = () => {
+  const destinoNombre = "TECOM Soluciones Tecnológicas";
+
+const handleOpenMaps = () => {
+  const destinoCodificado = encodeURIComponent(destinoNombre);
+  window.open(`https://www.google.com/maps/dir/?api=1&destination=${destinoCodificado}&travelmode=driving`, '_blank');
+};
  return (
      <div className="footer">
-       <img className="logoFooter" src={logo2} alt="" style={{width:'17%'}} />
-     
+     <div className='flexible'>
+     <img src={logo2} width={270} alt="" />
+     <div className='flexible2' onClick={handleOpenMaps}>
+     <span className="material-icons">place</span>
+     <p>  Av. la Encalada Nro. 1390 - Surco</p>
+     </div>
+     </div>
+    
        <ul className="menuFooter" >
-    <li><a href="#">Telecomunicaciones</a></li>
-    <li><a href="#">Catastro - Impuesto Predial</a></li>
-    <li><a href="#">Software</a></li>
-    <li><a href="#">Obras Civiles</a></li>
+    <li><a href="/telecomunicaciones">Telecomunicaciones</a></li>
+    <li><a href="/catastro">Catastro - Impuesto Predial</a></li>
+    <li><a href="/software">Software</a></li>
   </ul>
 
   <ul className="menuFooter" >
@@ -18,7 +31,7 @@ const Footer = () => {
     <li><i className="fa fa-map-marker"></i>&nbsp; linkedin/tecomsg</li>
    
   </ul>
-    
+ 
      </div>
    );
 }

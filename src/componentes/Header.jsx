@@ -88,8 +88,8 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-
-      <div className='div-rounded'>CONTACTO</div>
+      <a href="/contacto" > <div className="div-rounded">CONTACTO</div></a>
+     
     </div>
   );
 };

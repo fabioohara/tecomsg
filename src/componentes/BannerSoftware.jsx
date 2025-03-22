@@ -15,15 +15,13 @@ const BannerSoftware = () => {
                   
                 
                 </div>
-                <div className="banner-imgs">
+             
                 <img
                   className="banner-img"
                   src={software}
                   
                 />
 
-
-                </div>
             
 
 

@@ -15,15 +15,14 @@ const BannerTcatastro = () => {
                   
                 
                 </div>
-                <div className="banner-imgs">
+             
                 <img
-                  className="banner-img"
+                  className="banner-img filtrado"
                   src={tcatastro}
                   
                 />
 
 
-                </div>
             
 
 

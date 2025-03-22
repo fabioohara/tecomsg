@@ -10,9 +10,7 @@ const Agenda = () => {
     Estamos aquí para ayudarle a hacer crecer su negocio.</p>
       <h1>¿Busca las mejores soluciones para tu negocio?</h1>
      
-      <div className="button2">
-            Contáctanos {'>'}
-          </div>
+      <a href="/contacto" > <div className="button2"> Contáctanos {'>'}</div></a>
      
     </div>
    

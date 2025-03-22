@@ -10,25 +10,25 @@ const Card1 = () => {
 
       <div className="item grande">
         <div className="overlay">
-          <span className="categoria">CATASTRO</span>
-          <h3>Tampa cartografía las carreteras para reducir los accidentes mortales</h3>
-          <p>Leer artículo en el blog de TECOM</p>
+          <span className="categoria">CATASTRO / PREDIAL</span>
+          <h3>Reducción de hasta el 60% en costos tributarios en clientes como Petroperú.</h3>
+        
         </div>
       </div>
 
       <div className="item">
         <div className="overlay">
           <span className="categoria">TELECOMUNICACIONES</span>
-          <h3>Soluciones FTTH para aplicaciones de redes</h3>
-          <p>Leer artículo en el blog de TECOM</p>
+          <h3>Implementaciones FTTH en más de 20 ciudades en Perú.</h3>
+         
         </div>
       </div>
 
       <div className="item">
         <div className="overlay">
-          <span className="categoria">OBRAS CIVILES</span>
-          <h3>Beneficios de usar viguetas prensadas</h3>
-          <p>Leer artículo en el blog de TECOM</p>
+          <span className="categoria">SOFTWARE</span>
+          <h3>Supervisión y control de más de 15,000 postes y predios en proyectos FTTH y catastrales.</h3>
+         
         </div>
       </div>
     </div>

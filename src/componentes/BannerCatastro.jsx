@@ -14,7 +14,7 @@ const BannerCatastro = () => {
                   
                 
                 </div>
-                <div className="banner-imgs">
+             
                 <img
                   className="banner-img"
                   src={catastro}
@@ -22,7 +22,7 @@ const BannerCatastro = () => {
                 />
 
 
-                </div>
+              
             
 
 

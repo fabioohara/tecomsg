@@ -1,47 +1,33 @@
-import React from 'react'
-import map from '../assets/map.jpg'
-import mapa2 from '../assets/mapa2.png'
+import { useEffect } from 'react';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 
+export default function Mapa() {
+  useEffect(() => {
+    // 💡 Previene error: "Map container is already initialized"
+    const mapContainer = document.getElementById('map');
+    if (mapContainer._leaflet_id) {
+      mapContainer._leaflet_id = null;
+    }
 
-const Map = () => {
+    const map = L.map('map').setView([-12.0464, -77.0428], 14); // Lima, Perú
 
-    const destinoLat = -12.127110;  // Latitud destino
-    const destinoLng =  -77.0240204;  // Longitud destino
-    
-    const handleOpenMaps = () => {
-      window.open(`https://www.google.com/maps/dir/?api=1&destination=${destinoLat},${destinoLng}&travelmode=driving`, '_blank');
-    };
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors',
+    }).addTo(map);
 
+    const marker = L.marker([-12.0464, -77.0428]).addTo(map);
+    marker.bindPopup('<strong>Estoy aquí</strong><br>Lima, Perú').openPopup();
+  }, []);
 
   return (
-    <div class="container-rounded">
-   
-
-    <img className="left-image2" src={map} alt="Descripción de la imagen" onClick={handleOpenMaps} />
-
-    <div class="text-contentR2">
-        <br/>
-      <h1>Visítanos</h1>
-   
-      <p>
-      En nuesta oficina de Miraflores
-      </p>
-    
-     
-      <p className='p-movil'>
-      En nuesta oficina de Miraflores, Lima - Perú
-      </p>
-      <div className='map-movil'>
-      <i className="fa fa-map-marker" style={{color:'#d52c31', fontSize:'3rem'}}></i>
-      <p className='p-movil-loc'>
-      Avenida Reducto 861, Of. 303, Miraflores, Lima - Perú
-      </p>
-</div>
-      <img className="left-image3" src={mapa2} alt="Descripción de la imagen" />
-    </div>
-  
-  </div>
-  )
+    <div
+      id="map"
+      style={{
+        height: '400px',
+        width: '100%',
+        borderRadius: '8px',
+      }}
+    ></div>
+  );
 }
-
-export default Map
