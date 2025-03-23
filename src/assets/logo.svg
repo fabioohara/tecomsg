@@ -19,15 +19,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="3.1422879"
-     inkscape:cx="189.5116"
-     inkscape:cy="77.809547"
+     inkscape:zoom="2.2219331"
+     inkscape:cx="200.05103"
+     inkscape:cy="99.237912"
      inkscape:window-width="1920"
      inkscape:window-height="991"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g27" />
+     inkscape:current-layer="Capa_1" />
   <defs
      id="defs1">
     <style
@@ -76,5 +76,16 @@
        id="text33"
        style="font-size:24.5609px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';stroke:#52baf7;stroke-width:0.605402;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0"
        aria-label="S o l u c i o n e s   T e c n o l o g i c a s" />
+  </g>
+  <g
+     id="text1">
+    <path
+       style="color:#000000;-inkscape-font-specification:'Arial, Normal';fill:#868686;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none"
+       d="m 299.73047,98.019531 h 1.9707 l -1.99805,2.544919 h -1.18164 z"
+       id="path5" />
+    <path
+       style="color:#000000;-inkscape-font-specification:'Arial, Normal';fill:#868686;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none"
+       d="m 299.62109,97.675781 a 0.17222721,0.17222721 0 0 0 -0.15429,0.09766 l -1.37305,2.888669 a 0.17222721,0.17222721 0 0 0 0.15625,0.24609 h 1.53711 a 0.17222721,0.17222721 0 0 0 0.13476,-0.0664 l 2.26954,-2.888671 a 0.17222721,0.17222721 0 0 0 -0.13672,-0.277344 z"
+       id="path4" />
   </g>
 </svg>
