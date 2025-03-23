@@ -15,7 +15,7 @@ const handleOpenMaps = () => {
      <img src={logo2} width={270} alt="" />
      <div className='flexible2' onClick={handleOpenMaps}>
      <span className="material-icons">place</span>
-     <p>  Av. la Encalada Nro. 1390 - Surco</p>
+     <p>  Av. La Encalada N° 1388 - Surco</p>
      </div>
      </div>
     
