@@ -177,7 +177,7 @@ function App() {
 
       {/* Ícono de WhatsApp */}
       <a
-        href={`https://wa.me/990081302?text=Hola,%20quiero%20enviar%20una%20consulta%20desde%20su%20Sitio%20Web`}
+        href={`https://wa.me/51990081302?text=Hola,%20quiero%20enviar%20una%20consulta%20desde%20su%20Sitio%20Web`}
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-icon"
